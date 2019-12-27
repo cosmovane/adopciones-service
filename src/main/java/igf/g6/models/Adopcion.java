@@ -5,10 +5,10 @@ import java.util.Date;
 public class Adopcion {
     private int id;
     private int personaId; //cambiar de int a persona class
-    private Date fecha;
+    private String fecha;
     private String nombre;
 
-    public Adopcion(int id, int personaId, Date fecha, String nombre) {
+    public Adopcion(int id, int personaId, String fecha, String nombre) {
         this.id = id;
         this.personaId = personaId;
         this.fecha = fecha;
@@ -31,11 +31,20 @@ public class Adopcion {
         this.personaId = personaId;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }
