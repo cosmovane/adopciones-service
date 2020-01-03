@@ -4,33 +4,30 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 
-@Entity
-@Table(name = "nacimiento")
 public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @Column(name = "primer_nombre") private String primer_nombre;
-    @Column(name = "segundo_nombre") private String segundo_nombre;
-    @Column(name = "primer_apellido") private String primer_apellido;
-    @Column(name = "segundo_apellido") private String segundo_apellido;
-    @Column(name = "apellido_casada") private String apellido_casada;
-    @Column(name = "dui") private String dui;
-    @Column(name = "estado_civil") private String estado_civil;
-    @Column(name = "lugar_nacimiento") private String lugar_nacimiento;
-    @Column(name = "mayoria_edad") private Boolean mayoria_edad;
-    @Column(name = "padre") private String padre;
-    @Column(name = "madre") private String madre;
-    @Column(name = "hora") private Time hora;
-    @Column(name = "fecha_nacimiento") private Date fecha_nacimiento;
-    @Column(name = "hospital") private String hospital;
-    @Column(name = "sexo") private String sexo;
+    private String primer_nombre;
+    private String segundo_nombre;
+    private String primer_apellido;
+    private String segundo_apellido;
+    private String apellido_casada;
+    private String dui;
+    private String estado_civil;
+    private String lugar_nacimiento;
+    private Boolean mayoria_edad;
+    private String padre;
+    private String madre;
+    private Time hora;
+    private Date fecha_nacimiento;
+    private String hospital;
+    private String sexo;
 
     public Persona() {
     }
 
-    public Persona(String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido, String apellido_casada, String dui, String estado_civil, String lugar_nacimiento, Boolean mayoria_edad, String padre, String madre, Time hora, Date fecha_nacimiento, String hospital, String sexo) {
+    public Persona(long id,String primer_nombre, String segundo_nombre,
+                   String primer_apellido, String segundo_apellido, String apellido_casada, String dui, String estado_civil, String lugar_nacimiento, Boolean mayoria_edad, String padre, String madre, Time hora, Date fecha_nacimiento, String hospital, String sexo) {
+        this.id = id;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
         this.primer_apellido = primer_apellido;
