@@ -10,37 +10,40 @@ public class Adopcion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "personaId")
-    private long personaId;
-    @Column(name = "madreId")
-    private long madreId;
-    @Column(name = "padreId")
-    private long padreId;
-    @Column(name = "fechaAdopcion")
-    private String fechaAdopcion;
-    @Column(name = "nombre1")
-    private String nombre1;
-    @Column(name = "nombre2")
-    private String nombre2;
-    @Column(name = "apellido1")
-    private String apellido1;
-    @Column(name = "apellido2")
-    private String apellido2;
+    @Column(name = "persona_id")
+    private long persona_id;
+    @Column(name = "madre_id")
+    private Persona madre_id;
+    @Column(name = "padre_id")
+    private Persona padre_id;
+    @Column(name = "fecha_adopcion")
+    private String fecha_adopcion;
+    @Column(name = "primer_nombre")
+    private String primer_nombre;
+    @Column(name = "segundo_nombre")
+    private String segundo_nombre;
+    @Column(name = "primer_apellido")
+    private String primer_apellido;
+    @Column(name = "segundo_apellido")
+    private String segundo_apellido;
 
 
     public Adopcion() {
 
     }
 
-    public Adopcion(long personaId, long madreId, long padreId, String fechaAdopcion, String nombre1, String nombre2, String apellido1, String apellido2) {
-        this.personaId = personaId;
-        this.madreId = madreId;
-        this.padreId = padreId;
-        this.fechaAdopcion = fechaAdopcion;
-        this.nombre1 = nombre1;
-        this.nombre2 = nombre2;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
+    public Adopcion(long persona_id, Persona madre_id, Persona padre_id,
+                    String fecha_adopcion,
+                    String primer_nombre, String segundo_nombre, String primer_apellido,
+                    String segundo_apellido) {
+        this.persona_id = persona_id;
+        this.madre_id = madre_id;
+        this.padre_id = padre_id;
+        this.fecha_adopcion = fecha_adopcion;
+        this.primer_nombre = primer_nombre;
+        this.segundo_nombre = segundo_nombre;
+        this.primer_apellido = primer_apellido;
+        this.segundo_apellido = segundo_apellido;
     }
 
     public long getId() {
@@ -48,66 +51,66 @@ public class Adopcion {
     }
 
     public long getPersonaId() {
-        return personaId;
+        return persona_id;
     }
 
-    public void setPersonaId(long personaId) {
-        this.personaId = personaId;
+    public void setPersonaId(long persona_id) {
+        this.persona_id = persona_id;
     }
 
-    public long getMadreId() {
-        return madreId;
+    public Persona getMadreId() {
+        return madre_id;
     }
 
-    public void setMadreId(long madreId) {
-        this.madreId = madreId;
+    public void setMadreId(Persona madreId) {
+        this.madre_id = madre_id;
     }
 
-    public long getPadreId() {
-        return padreId;
+    public Persona getPadreId() {
+        return padre_id;
     }
 
-    public void setPadreId(long padreId) {
-        this.padreId = padreId;
+    public void setPadreId(Persona padreId) {
+        this.padre_id = padre_id;
     }
 
     public String getFechaAdopcion() {
-        return fechaAdopcion;
+        return fecha_adopcion;
     }
 
-    public void setFechaAdopcion(String fechaAdopcion) {
-        this.fechaAdopcion = fechaAdopcion;
+    public void setFechaAdopcion(String fecha_adopcion) {
+        this.fecha_adopcion = fecha_adopcion;
     }
 
     public String getNombre1() {
-        return nombre1;
+        return primer_nombre;
     }
 
     public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
+        this.primer_nombre = primer_nombre;
     }
 
     public String getNombre2() {
-        return nombre2;
+        return segundo_nombre;
     }
 
     public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
+        this.segundo_nombre = segundo_nombre;
     }
 
     public String getApellido1() {
-        return apellido1;
+        return primer_apellido;
     }
 
     public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
+        this.primer_apellido = primer_apellido;
     }
 
     public String getApellido2() {
-        return apellido2;
+        return segundo_apellido;
     }
 
     public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
+        this.segundo_apellido = segundo_apellido;
     }
 }
