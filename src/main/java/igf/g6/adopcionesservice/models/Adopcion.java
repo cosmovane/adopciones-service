@@ -1,6 +1,7 @@
 package igf.g6.adopcionesservice.models;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "adopciones")
@@ -13,11 +14,11 @@ public class Adopcion {
     @Column(name = "persona_id")
     private long persona_id;
     @Column(name = "madre_id")
-    private Persona madre_id;
+    private long madre_id;
     @Column(name = "padre_id")
-    private Persona padre_id;
+    private long padre_id;
     @Column(name = "fecha_adopcion")
-    private String fecha_adopcion;
+    private Date fecha_adopcion;
     @Column(name = "primer_nombre")
     private String primer_nombre;
     @Column(name = "segundo_nombre")
@@ -32,8 +33,8 @@ public class Adopcion {
 
     }
 
-    public Adopcion(long persona_id, Persona madre_id, Persona padre_id,
-                    String fecha_adopcion,
+    public Adopcion(long persona_id, long madre_id, long padre_id,
+                    Date fecha_adopcion,
                     String primer_nombre, String segundo_nombre, String primer_apellido,
                     String segundo_apellido) {
         this.persona_id = persona_id;
@@ -50,67 +51,71 @@ public class Adopcion {
         return id;
     }
 
-    public long getPersonaId() {
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getPersona_id() {
         return persona_id;
     }
 
-    public void setPersonaId(long persona_id) {
+    public void setPersona_id(long persona_id) {
         this.persona_id = persona_id;
     }
 
-    public Persona getMadreId() {
+    public long getMadre_id() {
         return madre_id;
     }
 
-    public void setMadreId(Persona madreId) {
+    public void setMadre_id(long madre_id) {
         this.madre_id = madre_id;
     }
 
-    public Persona getPadreId() {
+    public long getPadre_id() {
         return padre_id;
     }
 
-    public void setPadreId(Persona padreId) {
+    public void setPadre_id(long padre_id) {
         this.padre_id = padre_id;
     }
 
-    public String getFechaAdopcion() {
+    public Date getFecha_adopcion() {
         return fecha_adopcion;
     }
 
-    public void setFechaAdopcion(String fecha_adopcion) {
+    public void setFecha_adopcion(Date fecha_adopcion) {
         this.fecha_adopcion = fecha_adopcion;
     }
 
-    public String getNombre1() {
+    public String getPrimer_nombre() {
         return primer_nombre;
     }
 
-    public void setNombre1(String nombre1) {
+    public void setPrimer_nombre(String primer_nombre) {
         this.primer_nombre = primer_nombre;
     }
 
-    public String getNombre2() {
+    public String getSegundo_nombre() {
         return segundo_nombre;
     }
 
-    public void setNombre2(String nombre2) {
+    public void setSegundo_nombre(String segundo_nombre) {
         this.segundo_nombre = segundo_nombre;
     }
 
-    public String getApellido1() {
+    public String getPrimer_apellido() {
         return primer_apellido;
     }
 
-    public void setApellido1(String apellido1) {
+    public void setPrimer_apellido(String primer_apellido) {
         this.primer_apellido = primer_apellido;
     }
 
-    public String getApellido2() {
+    public String getSegundo_apellido() {
         return segundo_apellido;
     }
 
-    public void setApellido2(String apellido2) {
+    public void setSegundo_apellido(String segundo_apellido) {
         this.segundo_apellido = segundo_apellido;
     }
 }
